@@ -6,7 +6,13 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:55:41 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/11/21 13:55:42 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:37:13 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void    pa()
+{
+    
+}

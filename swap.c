@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:55:37 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/11/21 14:03:17 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:34:44 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,11 @@ void    sb(int *sb)
     write(1, "sb\n", 3);
 }
 
-void    ss(int *sa, int *sb)
+void    ss(int *a, int *b)
 {
     int tmp;
 
-    tmp == sa[0];
-    sa[0] == sa[1];
-    sa[1] == tmp;
-    tmp == sb[0];
-    sb[0] == sb[1];
-    sb[1] == tmp;
+    sa(a);
+    sb(b);
     write(1, "ss\n", 3);
 }
