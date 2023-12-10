@@ -18,16 +18,9 @@ int main(int argc, char **argv)
     t_stack *b;
 
     a = NULL;
-    b = NULL;
-    if (argc == 1 || argv[1][0] == '\0')
+    b = NULL; 
+    if (argc == 1)
         return (1);
+
 }
 
-int main(int argc, char **argv)
-{
-    t_stack *a;
-
-    //iniciamos stack y comprobamos que no haya errorres.
-    ini_stack(t_stack **a, char **argv);
-    
-}

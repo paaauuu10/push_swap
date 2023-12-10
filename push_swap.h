@@ -34,14 +34,23 @@ typedef struct s_stack
 
 // Movements instructions
     // Swap
-void    ss(t_stack *a, t_stack *b);
-void    sa(t_stack *a);
-void    sb(t_stack *b);
+void    ss(t_stack **a, t_stack **b);
+void    sa(t_stack **a, int flag);
+void    sb(t_stack **b, int flag);
     // Push
-void    pa(t_list *l);
-void    pb(t_list *l);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
 
     // Rotate
+void    ra(t_stack **a, int flag);
+void    rb(t_stack **b, int flag);
+void    rr(t_stack **a, t_stack **b);
+
+    // Reverse rotate
+void	rra(t_stack **a, int flag);
+void	rrb(t_stack **b, int flag);
+void	rrr(t_stack **a, t_stack **b);
+
 
 
 int main(int argc, char **argv)
