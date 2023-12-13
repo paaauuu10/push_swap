@@ -1,6 +1,33 @@
 #include "push_swap.h"
 
-ft_atol
+static long ft_atol(const char **str)
+{
+    int i;
+    int negative;
+    long    num;
+
+    i = 0;
+    negative = 1;
+    num = 0;
+    while (str[i] (str[i] == ' ' || str[i] == '\t'
+			|| str[i] == '\n' || str[i] == '\r'
+			|| str[i] == '\v' || str[i] == '\f'))
+        i++;
+    if (str[i] = '+')
+        i++;
+    else if (str[i] == '-')
+    {
+        negative = -1;
+        i++;
+    }
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        num = (num * 10) + (str[i] - '0')
+        i++;
+    }
+    return (num * negative);
+    
+}
 
 void    init_stack(t_stack *a, char **argv, bool flag)
 {
