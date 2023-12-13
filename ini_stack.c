@@ -49,5 +49,4 @@ void    init_stack(t_stack *a, char **argv, bool flag)
     }
     if (flag)
         free_atoi(argv);
-
 }
