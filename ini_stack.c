@@ -48,5 +48,5 @@ void    init_stack(t_stack *a, char **argv, bool flag)
         i++;
     }
     if (flag)
-        free_atoi(argv);
+        free_split(argv);
 }

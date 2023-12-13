@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     else if (argc == 2)
         argv = ft_split(argv[1], ' ');
     init_stack(&a, argv, argc == 2)
-    if (!(is_sorted(a)))
+    if (!(ft_is_sorted(a)))
     {
         if (stack_len(a) == 2)
             sa(&a, 1);

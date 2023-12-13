@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    free_atoi(char **argv)
+void    free_split(char **argv)
 {
     int i;
 
@@ -35,7 +35,7 @@ void    ft_error_free(t_stack **a, char **argv, bool flag)
 {
     ft_free_stack(a);
     if (flag)
-        free_atoi(argv);
+        free_split(argv);
     write(2, "Error\n", 6);
     exit(1);
 }

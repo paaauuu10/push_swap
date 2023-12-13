@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 static int  ft_is_number(char *argv)
 {
     int i;
