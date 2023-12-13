@@ -31,26 +31,44 @@ typedef struct s_stack
     struct s_stack  *prev;   
     }   t_stack;
 
+// Split
+char	**ft_split(char const *s, char c);
+char	**createwords(char const *s, char c, char **split);
+int     checkwords(char const *s, char c);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+static char	**ft_free(char **split, size_t i);
+
+// Initialize stack
+void    ft_init_stack(t_stack *a, char **argv, bool flag);
+int ft_syntax_error(char *s);
+static long ft_atol(const char **str);
+int ft_find_repetition(t_stack *a, int nbr);
+void    ft_add_to_final(t_stack *stack_a, int nbr);
+t_stack *ft_find_last(t_stack *stack_a);
+
+// Stack utils
+int ft_is_sorted(t_stack *a);
+int ft_stack_len(t_stack *a);s
+
+// Free and error
+void    ft_error_free(t_stack **a, char **argv, bool flag);
+void    free_stack(t_stack **a);
+void    free_split(char **argv);
+
 // How to handle errors
 
 // Movements instructions
     // Swap
-void    ss(t_stack **a, t_stack **b);
-void    sa(t_stack **a, int flag);
-void    sb(t_stack **b, int flag);
+
     // Push
-void    pa(t_stack **a, t_stack **b);
-void    pb(t_stack **a, t_stack **b);
 
     // Rotate
-void    ra(t_stack **a, int flag);
-void    rb(t_stack **b, int flag);
-void    rr(t_stack **a, t_stack **b);
+
 
     // Reverse rotate
-void	rra(t_stack **a, int flag);
-void	rrb(t_stack **b, int flag);
-void	rrr(t_stack **a, t_stack **b);
+
+
+
 
 
 

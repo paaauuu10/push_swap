@@ -29,7 +29,7 @@ static long ft_atol(const char **str)
     
 }
 
-void    init_stack(t_stack *a, char **argv, bool flag)
+void    ft_init_stack(t_stack *a, char **argv, bool flag)
 {
     long    nbr;
     int i;
@@ -44,7 +44,7 @@ void    init_stack(t_stack *a, char **argv, bool flag)
             ft_error_free(a, argv, flag)
         if (ft_find_repetition(*a, (int)nbr))
             ft_error_free(a, argv, flag);
-        add_to_final(a, (int)nbr);
+        ft_add_to_final(a, (int)nbr);
         i++;
     }
     if (flag)
