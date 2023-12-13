@@ -1,28 +1,26 @@
 #include "push_swap.h"
 
-static int  ft_isnumber(char *argv)
+ft_atol
+
+void    init_stack(t_stack *a, char **argv, bool flag)
 {
+    long    nbr;
     int i;
 
-    if (argv[0] == "\0")
-        return (0);
     i = 0;
-    if ((argv[0] == '-' || argv[0] == '+') && argv[1])
-        i = 1;
-    while (argv[i] && (argv[i] >= '0' && argv[i] <= '9'))
-        i++;
-    if (argv[i] && (argv[i] < '0' && argv[i] > '9'))
-        return (0);
-    return (1); 
-}
-
-/*void ini_stack(t_stack **a, char **argv)
-{
-    long    num;
-    while (*argv)
+    while (argv[i])
     {
-        if (check_num(*argv));
-
-
+        if (ft_syntax_error(argv[i]))
+            ft_error_free(a, argv, flag)
+        nbr = ft_atol(argv[i]);
+        if (nbr > INT_MAX || nbr < INT_MAX)
+            ft_error_free(a, argv, flag)
+        if (ft_find_repetition(*a, (int)nbr))
+            ft_error_free(a, argv, flag);
+        add_to_final(a, (int)nbr);
+        i++;
     }
-}*/
+    if (flag)
+        free_atoi(argv);
+
+}
