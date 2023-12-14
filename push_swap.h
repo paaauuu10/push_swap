@@ -56,11 +56,23 @@ void    free_stack(t_stack **a);
 void    free_split(char **argv);
 
 // How to handle errors
+int ft_syntax_error(char *s);
+int ft_find_repetition(t_stack *a, int nbr);
+
+// Sort three
+void ft_sort_three(t_stack **a);
+static t_stack *find_big_one(t_stack *a);
 
 // Movements instructions
     // Swap
+void    sa(t_stack **a);
+void    sb(t_stack **b);
+void    ss(t_stack **a, t_stack **b);
 
     // Push
+void    pb(t_stack **b, t_stack **a);
+void    pa(t_stack **a, t_stack **b);
+
 
     // Rotate
 
@@ -69,8 +81,4 @@ void    free_split(char **argv);
 
 
 
-
-
-
-int main(int argc, char **argv)
 #endif

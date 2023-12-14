@@ -12,29 +12,37 @@
 
 #include "push_swap.h"
 
-void    swap(int *a, int *b)
+void    sa(t_stack **a, int flag)
 {
     int aux;
-    
-    aux = *a;
-    *a = *b;
-    *b = aux;
-}
-void    sa(t_stack *a)
-{
-    swap(&a->value, &a->next->value);
-    write(1, "sa\n", 3);
+
+    if (*a == NULL || a == NULL)
+        return ;
+    if (ft_stack_len(*a) < 2)
+        return ;
+    aux = (*a)->value;
+    (*a)->value = (*a)->next->value;
+    (*a)->next->value = aux;
+    if (flag == 1)
+        write(1, "sa\n", 3);
 }
 
-void    sb(t_stack *b)
+void    sb(t_stack **b, int flag)
 {
-    swap(&b->value, &b->next->value);
-    write(1, "sb\n", 3);
+    if (*b == NULL || b == NULL)
+        return ;
+    if (ft_stack_len(*b) < 2)
+        return ;
+    aux = (*b)->value;
+    (*b)->value = (*b)->next->value;
+    (*b)->next->value = aux;
+    if (flag == 1)
+        write(1, "sb\n", 3);
 }
 
-void    ss(t_stack *a, t_stack *b)
+void    ss(t_stack **a, t_stack **b)
 {
-    sa(a);
-    sb(b);
+    sa(a, 0);
+    sb(b, 0);
     write(1, "ss\n", 3);
 }
