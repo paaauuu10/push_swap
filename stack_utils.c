@@ -17,7 +17,7 @@ int ft_is_sorted(t_stack *a)
 {
     while (a->next)
     {
-        if (a->value > a->next_value)
+        if (a->value > a->next->value)
             return (0);
         a = a->next;
     }
@@ -35,19 +35,19 @@ t_stack *ft_find_last(t_stack *stack_a)
     return (stack_a);
 }
 
-void    ft_add_to_final(t_stack *stack_a, int nbr)
+void    ft_add_to_final(t_stack **stack_a, int nbr)
 {
     t_stack *node;
     t_stack *last_node;
 
-    if (stack_a = NULL)
+    if (stack_a == NULL)
         return ;
     node = malloc(sizeof(t_stack));
     if (node == NULL)
         return ;
     node->next = NULL;
     node->value = nbr;
-    if (*stack == NULL)
+    if (*stack_a == NULL)
     {
         *stack_a = node;
         node->prev = NULL;
@@ -58,4 +58,25 @@ void    ft_add_to_final(t_stack *stack_a, int nbr)
         last_node->next = node;
         node->prev = last_node;
     }
+}
+
+t_stack *ft_find_small(t_stack *a)
+{
+    int small;
+    t_stack *smallest_node;
+
+    if (a == NULL)
+        return (NULL);
+    small = INT_MAX;
+    smallest_node = NULL;
+    while(a)
+    {
+        if (a->value < small)
+        {
+            small = a->value;
+            smallest_node = a;
+        }
+        a = a->next;
+    }
+    return (smallest_node);
 }

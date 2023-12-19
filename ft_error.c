@@ -7,14 +7,14 @@ void    free_split(char **argv)
     i = 0;
     if (argv == NULL || *argv == NULL)
         return ;
-    while (argv[i] != '\0')
+    while (argv[i] != NULL)
     {
         free(argv[i]);
         i++;
     }
     free(argv);
 }
-void    free_stack(t_stack **a)
+void    ft_free_stack(t_stack **a)
 {
     t_stack *tmp;
     t_stack *current;
@@ -26,16 +26,18 @@ void    free_stack(t_stack **a)
     {
         tmp = current->next;
         free(current);
-        currrent = tmp;
+        current = tmp;
     }
     *a = NULL;
 }
 
-void    ft_error_free(t_stack **a, char **argv, bool flag)
+void    ft_error_free(t_stack **a, char **argv, int flag)
 {
     ft_free_stack(a);
-    if (flag)
+    if (flag == 1)
+    {
         free_split(argv);
+    }
     write(2, "Error\n", 6);
     exit(1);
 }

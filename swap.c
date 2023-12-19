@@ -29,6 +29,8 @@ void    sa(t_stack **a, int flag)
 
 void    sb(t_stack **b, int flag)
 {
+    int aux;
+    
     if (*b == NULL || b == NULL)
         return ;
     if (ft_stack_len(*b) < 2)

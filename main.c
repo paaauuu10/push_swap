@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <stdio.h>
 
 int main(int argc, char **argv)
 {
@@ -13,8 +14,8 @@ int main(int argc, char **argv)
         return (1);
     else if (argc == 2)
         argv = ft_split(argv[1], ' ');
-    ft_init_stack(&a, argv, argc == 2)
-    if (!(ft_is_sorted(a)))
+    ft_init_stack(&a, argv, argc == 2);
+    if (!ft_is_sorted(a))
     {
         if (ft_stack_len(a) == 2)
             sa(&a, 1);

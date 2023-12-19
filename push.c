@@ -26,7 +26,7 @@ void    pa(t_stack **a, t_stack **b)
     if (*a == NULL)
     {
         *a = push;
-        push->next == NULL;
+        push->next = NULL;
     }
     else
     {
@@ -51,7 +51,7 @@ void    pb(t_stack **b, t_stack **a)
     if (*b == NULL)
     {
         *b = push;
-        push->next == NULL;
+        push->next = NULL;
     }
     else
     {

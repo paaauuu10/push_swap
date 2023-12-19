@@ -12,3 +12,10 @@
 
 #include "push_swap.h"
 
+void	ft_push_swap(t_stack **a, t_stack **b)
+{
+    a = NULL;
+    b = NULL;
+    if (a == NULL || b == NULL)
+        write(1, " ", 1);
+}

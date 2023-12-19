@@ -8,7 +8,7 @@ void    rra(t_stack **a, int flag)
     if (ft_stack_len(*a) < 2)
         return ;
     last_one_first_one = ft_find_last(*a);
-    last_one_first_one->prev->next == NULL;
+    last_one_first_one->prev->next = NULL;
     last_one_first_one->next = *a;
     last_one_first_one->prev = NULL;
     *a = last_one_first_one;
@@ -17,7 +17,7 @@ void    rra(t_stack **a, int flag)
         write(1, "rra\n", 4);
 }
 
-void    rrb(t_stack **b, inf flag)
+void    rrb(t_stack **b, int flag)
 {
     t_stack *last_one_first_one;
     if (b == NULL || *b == NULL)
@@ -25,7 +25,7 @@ void    rrb(t_stack **b, inf flag)
     if (ft_stack_len(*b) < 2)
         return ;
     last_one_first_one = ft_find_last(*b);
-    last_one_first_one->prev->next == NULL;
+    last_one_first_one->prev->next = NULL;
     last_one_first_one->next = *b;
     last_one_first_one->prev = NULL;
     *b = last_one_first_one;

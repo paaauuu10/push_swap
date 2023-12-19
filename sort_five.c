@@ -10,8 +10,8 @@ void    ft_sort_five(t_stack **a, t_stack **b)
     while (i < 2)
     {
         min_node = ft_find_small(*a);
-        min_val == min_node->value;
-        if (min_node ==n ft_find_last(*a))
+        min_val = min_node->value;
+        if (min_node == ft_find_last(*a))
             rra(a, 1);
         if ((*a)->value > min_val)
             ra(a, 1);

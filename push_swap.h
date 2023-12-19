@@ -36,23 +36,22 @@ char	**ft_split(char const *s, char c);
 char	**createwords(char const *s, char c, char **split);
 int     checkwords(char const *s, char c);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
-static char	**ft_free(char **split, size_t i);
 
 // Initialize stack
-void    ft_init_stack(t_stack *a, char **argv, bool flag);
+void    ft_init_stack(t_stack **a, char **argv, int flag);
 int ft_syntax_error(char *s);
-static long ft_atol(const char **str);
 int ft_find_repetition(t_stack *a, int nbr);
-void    ft_add_to_final(t_stack *stack_a, int nbr);
+void    ft_add_to_final(t_stack **stack_a, int nbr);
 t_stack *ft_find_last(t_stack *stack_a);
 
 // Stack utils
 int ft_is_sorted(t_stack *a);
-int ft_stack_len(t_stack *a);s
+int ft_stack_len(t_stack *a);
+t_stack *ft_find_small(t_stack *a);
 
 // Free and error
-void    ft_error_free(t_stack **a, char **argv, bool flag);
-void    free_stack(t_stack **a);
+void    ft_error_free(t_stack **a, char **argv, int flag);
+void    ft_free_stack(t_stack **a);
 void    free_split(char **argv);
 
 // How to handle errors
@@ -61,12 +60,17 @@ int ft_find_repetition(t_stack *a, int nbr);
 
 // Sort three
 void ft_sort_three(t_stack **a);
-static t_stack *find_big_one(t_stack *a);
+
+// Sort five 
+void    ft_sort_five(t_stack **a, t_stack **b);
+
+// Push_swap algorithm
+void	ft_push_swap(t_stack **a, t_stack **b);
 
 // Movements instructions
     // Swap
-void    sa(t_stack **a);
-void    sb(t_stack **b);
+void    sa(t_stack **a, int flag);
+void    sb(t_stack **b, int flag);
 void    ss(t_stack **a, t_stack **b);
 
     // Push
@@ -74,14 +78,20 @@ void    pb(t_stack **b, t_stack **a);
 void    pa(t_stack **a, t_stack **b);
 
     // Rotate
-void    ra(t_stack **a);
-void    rb(t_stack **b);
+void    ra(t_stack **a, int flag);
+void    rb(t_stack **b, int flag);
 void    rr(t_stack **a, t_stack **b);
 
     // Reverse rotate
 void	rra(t_stack **a, int flag);
 void	rrb(t_stack **b, int flag);
 void	rrr(t_stack **a, t_stack **b);
+
+//LIBFT
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
 
 
 

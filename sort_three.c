@@ -25,9 +25,9 @@ void ft_sort_three(t_stack **a)
     t_stack *big_one;
     
     big_one = find_big_one(*a);
-    if (a == big_one)
+    if (*a == big_one)
         ra(a, 1);
-    else if ((*a)->next == biggest)
+    else if ((*a)->next == big_one)
         rra(a, 1);
     if ((*a)->value > (*a)->next->value)
         sa(a, 1);

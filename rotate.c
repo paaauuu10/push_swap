@@ -16,34 +16,36 @@ void    ra(t_stack **a, int flag)
 {
     t_stack *last_one;
 
-    if (*a == NULL || a == NULL)
+    if (*a == NULL || a == NULL || ft_stack_len(*a) == 1)
         return ;
     if (ft_stack_len(*a) == 1)
-        return;
+        return ;
     last_one = ft_find_last(*a);
     last_one->next = *a;
-    (*a)->prev == NULL;
+    *a = (*a)->next;
+    (*a)->prev = NULL;
     last_one->next->prev = last_one;
     last_one->next->next = NULL;
     if (flag == 1)
-        write(1, "ra\n, 3");
+        write(1, "ra\n", 3);
 }
 
-void    rb(t_stack **b)
+void    rb(t_stack **b, int flag)
 {
     t_stack *last_one;
 
     if (*b == NULL || b == NULL)
         return ;
     if (ft_stack_len(*b) == 1)
-        return;
+        return ;
     last_one = ft_find_last(*b);
     last_one->next = *b;
-    (*b)->prev == NULL;
+    *b = (*b)->next;
+    (*b)->prev = NULL;
     last_one->next->prev = last_one;
     last_one->next->next = NULL;
     if (flag == 1)
-        write(1, "rb\n, 3");
+        write(1, "rb\n", 3);
 }
 
 void    rr(t_stack **a, t_stack **b)
