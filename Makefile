@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = main.c push_swap.c ft_error.c handle_errors.c ini_stack.c libft.c push.c reverse_rotate.c rotate.c sort_five.c sort_three.c split.c stack_utils.c swap.c 
 # Lista de archivos fuente
 OBJ = $(SRC:.c=.o)
-EXECUTABLE = pushswap
+EXECUTABLE = push_swap
 
 all: $(EXECUTABLE)
 

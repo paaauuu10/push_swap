@@ -26,7 +26,10 @@
 typedef struct s_stack
 {
     int value;
-    int index;
+    int position;
+    int price;
+    int above_median;
+    int cheapest;
     struct s_stack  *next;
     struct s_stack  *prev;   
     }   t_stack;
