@@ -24,7 +24,7 @@ void ft_current_position(t_stack *a)
 
 //the function finds and sets as a target the smallest bigger node.
 
-void ft_target(t_stack *a, t_stack *b)
+static void ft_target(t_stack *a, t_stack *b)
 {
     t_stack *current_stack_a;
     t_stack *target;
@@ -41,7 +41,7 @@ void ft_target(t_stack *a, t_stack *b)
                 match = current_stack_a->value;
                 target = current_stack_a;
             }
-            current_stack_a = current_stack_a->next
+            current_stack_a = current_stack_a->next;
         }
         if (match == 2147483647)
             b->target = ft_find_small(a);
@@ -61,7 +61,7 @@ void ft_price(t_stack *a, t_stack *b)
         if (b->target->above_median == 1)
             b->price += b->target->position;
         else
-            b->price += ft_stack_len(b) - b->target->position;
+            b->price += ft_stack_len(a) - b->target->position;
         b = b->next;
     }
 }
@@ -69,7 +69,7 @@ void ft_price(t_stack *a, t_stack *b)
 void   ft_cheapest(t_stack *b)
 {
     long    best;
-    t_stack best_match;
+    t_stack *best_match;
 
     if (b == NULL)
         return ;
@@ -83,7 +83,7 @@ void   ft_cheapest(t_stack *b)
         }
         b = b->next;
     }
-    best_match->cheapest = 1;
+    best_match->cheapest = true;
 }
 
 void ft_info_nodes(t_stack *a, t_stack *b)

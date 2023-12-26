@@ -30,6 +30,7 @@ typedef struct s_stack
     int price;
     int above_median;
     int cheapest;
+    struct s_stack  *target;
     struct s_stack  *next;
     struct s_stack  *prev;   
     }   t_stack;
@@ -89,6 +90,14 @@ void    rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a, int flag);
 void	rrb(t_stack **b, int flag);
 void	rrr(t_stack **a, t_stack **b);
+
+//Getting info for the nodes
+void ft_info_nodes(t_stack *a, t_stack *b);
+void ft_cheapest(t_stack *b);
+void ft_price(t_stack *a, t_stack *b);
+
+//void ft_target(t_stack *a, t_stack *b);
+void ft_current_position(t_stack *a);
 
 //LIBFT
 size_t	ft_strlen(const char *s);
