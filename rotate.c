@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:55:39 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/11/29 12:57:01 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/12/27 23:39:39 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    ra(t_stack **a, int flag)
 {
     t_stack *last_one;
 
-    if (*a == NULL || a == NULL || ft_stack_len(*a) == 1)
+    if (*a == NULL || a == NULL)
         return ;
     if (ft_stack_len(*a) == 1)
         return ;

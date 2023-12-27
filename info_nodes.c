@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_nodes.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/27 23:20:49 by paubotargue       #+#    #+#             */
+/*   Updated: 2023/12/27 23:39:46 by pbotargu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void ft_current_position(t_stack *a)
@@ -36,7 +48,7 @@ static void ft_target(t_stack *a, t_stack *b)
         current_stack_a = a;
         while (current_stack_a)
         {
-            if (current_stack_a->value > b->value && current_stack_a->value < match)
+            if ((current_stack_a->value > b->value) && (current_stack_a->value < match))
             {
                 match = current_stack_a->value;
                 target = current_stack_a;
@@ -46,7 +58,7 @@ static void ft_target(t_stack *a, t_stack *b)
         if (match == 2147483647)
             b->target = ft_find_small(a);
         else
-            b->target = target;
+        b->target = target;
         b = b->next;
     }
 }
@@ -62,6 +74,7 @@ void ft_price(t_stack *a, t_stack *b)
             b->price += b->target->position;
         else
             b->price += ft_stack_len(a) - b->target->position;
+        printf("Elemento %d en B tiene precio %d\n", b->value, b->price);
         b = b->next;
     }
 }
