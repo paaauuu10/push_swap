@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:20:49 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/27 23:39:46 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/12/28 01:13:12 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void ft_target(t_stack *a, t_stack *b)
         if (match == 2147483647)
             b->target = ft_find_small(a);
         else
-        b->target = target;
+            b->target = target;
         b = b->next;
     }
 }
@@ -74,7 +74,6 @@ void ft_price(t_stack *a, t_stack *b)
             b->price += b->target->position;
         else
             b->price += ft_stack_len(a) - b->target->position;
-        printf("Elemento %d en B tiene precio %d\n", b->value, b->price);
         b = b->next;
     }
 }

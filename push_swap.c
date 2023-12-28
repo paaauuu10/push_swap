@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:13:55 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/12/27 23:39:42 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/12/28 01:13:21 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,18 @@ static void ft_rrr_stacks(t_stack **a, t_stack **b, t_stack *cheapest)
     ft_current_position(*b);
 }
 
-static void ft_put_top(t_stack **stack, t_stack *top, char a_b)
+static void ft_put_top(t_stack **stack, t_stack *top, int a_b)
 {
     while(*stack != top)
     {
-        if (a_b == 'a')
+        if (a_b == 1)
         { 
             if (top->above_median)
                 ra(stack, 1);
             else
                 rra(stack, 1);
         }
-        else if (a_b == 'b')
+        else if (a_b == 0)
         {
             if (top->above_median)
                 rb(stack, 1);
@@ -60,8 +60,8 @@ static void ft_move_nodes(t_stack **a, t_stack **b)
         ft_rr_stacks(a, b, the_cheapest);
     else if (!(the_cheapest->above_median) && !(the_cheapest->target->above_median))
         ft_rrr_stacks(a, b, the_cheapest);
-    ft_put_top(a, the_cheapest->target, 'a');
-    ft_put_top(b, the_cheapest, 'b');
+    ft_put_top(a, the_cheapest->target, 1);
+    ft_put_top(b, the_cheapest, 0);
     pa(a, b);
 }
 

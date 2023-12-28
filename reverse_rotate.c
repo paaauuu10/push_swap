@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:37:00 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/27 23:39:40 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/12/28 01:15:24 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void    rrb(t_stack **b, int flag)
     *b = last_one_first_one;
     last_one_first_one->next->prev = last_one_first_one;
     if (flag == 1)
-        write(1, "rra\n", 4);
+        write(1, "rrb\n", 4);
 }
 
 void    rrr(t_stack **a, t_stack **b)
