@@ -30,57 +30,58 @@ int	ft_syntax_error(char *s)
 	return (0);
 }
 
-int ft_find_repetition(t_stack *a, int nbr)
+int	ft_find_repetition(t_stack *a, int nbr)
 {
-    if (a == NULL)
-        return (0);
-    while (a)
-    {
-        if (a->value == nbr)
-            return (1);
-        a = a->next;
-    }
-    return (0);
+	if (a == NULL)
+		return (0);
+	while (a)
+	{
+		if (a->value == nbr)
+			return (1);
+	a = a->next;
+	}
+	return (0);
 }
 
-void    free_split(char **argv)
+void	free_split(char **argv)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (argv == NULL || *argv == NULL)
-        return ;
-    while (argv[i] != NULL)
-    {
-        free(argv[i]);
-        i++;
-    }
-    free(argv);
-}
-void    ft_free_stack(t_stack **a)
-{
-    t_stack *tmp;
-    t_stack *current;
-
-    if (a == NULL)
-        return;
-    current = *a;
-    while (current)
-    {
-        tmp = current->next;
-        free(current);
-        current = tmp;
-    }
-    *a = NULL;
+	i = 0;
+	if (argv == NULL || *argv == NULL)
+		return ;
+	while (argv[i] != NULL)
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }
 
-void    ft_error_free(t_stack **a, char **argv, int flag)
+void	ft_free_stack(t_stack **a)
 {
-    ft_free_stack(a);
-    if (flag == 1)
-    {
-        free_split(argv);
-    }
-    write(2, "Error\n", 6);
-    exit(1);
+	t_stack	*tmp;
+	t_stack	*current;
+
+	if (a == NULL)
+		return ;
+	current = *a;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*a = NULL;
+}
+
+void	ft_error_free(t_stack **a, char **argv, int flag)
+{
+	ft_free_stack(a);
+	if (flag == 1)
+	{
+		free_split(argv);
+	}
+	write(2, "Error\n", 6);
+	exit(1);
 }
