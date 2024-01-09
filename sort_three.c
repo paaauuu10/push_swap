@@ -12,35 +12,35 @@
 
 #include "push_swap.h"
 
-static t_stack *find_big_one(t_stack *a)
+static t_stack	*find_big_one(t_stack *a)
 {
-    int big;
-    t_stack *big_one;
+	int		big;
+	t_stack	*big_one;
 
-    if (a == NULL)
-        return (NULL);
-    big = -2147483648;
-    while (a)
-    {
-        if (a->value > big)
-        {
-            big = a->value;
-            big_one = a;
-        }
-        a = a->next;
-    }
-    return (big_one);
+	if (a == NULL)
+		return (NULL);
+	big = -2147483648;
+	while (a)
+	{
+		if (a->value > big)
+		{
+			big = a->value;
+			big_one = a;
+		}
+		a = a->next;
+	}
+	return (big_one);
 }
 
-void ft_sort_three(t_stack **a)
+void	ft_sort_three(t_stack **a)
 {
-    t_stack *big_one;
-    
-    big_one = find_big_one(*a);
-    if (*a == big_one)
-        ra(a, 1);
-    else if ((*a)->next == big_one)
-        rra(a, 1);
-    if ((*a)->value > (*a)->next->value)
-        sa(a, 1);
+	t_stack	*big_one;
+
+	big_one = find_big_one(*a);
+	if (*a == big_one)
+		ra(a, 1);
+	else if ((*a)->next == big_one)
+		rra(a, 1);
+	if ((*a)->value > (*a)->next->value)
+		sa(a, 1);
 }
