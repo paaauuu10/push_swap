@@ -57,7 +57,7 @@ static void	ft_move_nodes(t_stack **a, t_stack **b)
 	while (cheap->cheapest == 0)
 		cheap = cheap->next;
 	if (cheap->above_median && cheap->target->above_median)
-		ft_rr_stacks(a, b, cheapp);
+		ft_rr_stacks(a, b, cheap);
 	else if (!(cheap->above_median) && !(cheap->target->above_median))
 		ft_rrr_stacks(a, b, cheap);
 	ft_put_top(a, cheap->target, 1);
