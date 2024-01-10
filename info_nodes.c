@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:20:49 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/28 01:13:12 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:50:39 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	ft_target(t_stack *a, t_stack *b)
 			b->target = ft_find_small(a);
 		else
 			b->target = target;
-			b = b->next;
+		b = b->next;
 	}
 }
 
@@ -74,7 +74,7 @@ void	ft_price(t_stack *a, t_stack *b)
 			b->price += b->target->position;
 		else
 			b->price += ft_stack_len(a) - b->target->position;
-			b = b->next;
+		b = b->next;
 	}
 }
 
@@ -93,7 +93,7 @@ void	ft_cheapest(t_stack *b)
 			best = b->price;
 			best_match = b;
 		}
-	b = b->next;
+		b = b->next;
 	}
 	best_match->cheapest = true;
 }
