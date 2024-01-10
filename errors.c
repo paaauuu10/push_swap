@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:20:43 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/28 01:13:10 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:49:34 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_find_repetition(t_stack *a, int nbr)
 	{
 		if (a->value == nbr)
 			return (1);
-	a = a->next;
+		a = a->next;
 	}
 	return (0);
 }
