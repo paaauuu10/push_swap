@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:37:12 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/27 23:39:36 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:47:54 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ char	**createwords(char const *s, char c, char **split)
 		while (*s == c)
 			s++;
 		while (*s != c && *s)
-		{	
+		{
 			s++;
 			last++;
 		}
 		if (last > 0)
-		{	
+		{
 			split[i] = ft_substr(s - last, 0, last);
 			if (!split[i])
 				return (ft_free(split, i));
@@ -104,4 +104,4 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	split = (createwords(s, c, split));
 	return (split);
-}	
+}
