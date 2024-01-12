@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:20:57 by paubotargue       #+#    #+#             */
-/*   Updated: 2023/12/28 01:13:18 by pbotargu         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:45:56 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,14 @@ int	main(int argc, char *argv[])
 		return (1);
 	else if (argc == 2 && argv[1][0] == '\0')
 		return (1);
+	/*if (argc == 2 && check_spaces(argv[1]))
+		return (0);*/
+
+	// crear funcio que em revisi els espais
+		
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
+	
 	ft_init_stack(&a, argv, argc == 2);
 	if (!ft_is_sorted(a))
 	{
